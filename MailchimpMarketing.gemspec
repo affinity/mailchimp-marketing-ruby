@@ -12,12 +12,9 @@ Swagger Codegen version: 2.4.12
 
 =end
 
-$:.push File.expand_path("../lib", __FILE__)
-require "MailchimpMarketing/version"
-
 Gem::Specification.new do |s|
   s.name        = "MailchimpMarketing"
-  s.version     = MailchimpMarketing::VERSION
+  s.version     = File.read(File.expand_path("lib/MailchimpMarketing/version.rb", __dir__))[/VERSION = '([^']+)'/, 1]
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Mailchimp"]
   s.email       = ["apihelp@mailchimp.com"]
